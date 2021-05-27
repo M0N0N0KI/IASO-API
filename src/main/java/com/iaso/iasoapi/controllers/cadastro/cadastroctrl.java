@@ -1,7 +1,5 @@
 package com.iaso.iasoapi.controllers.cadastro;
 
-import java.util.List;
-
 import com.iaso.iasoapi.models.cadastro.cadastroRepository;
 import com.iaso.iasoapi.models.cadastro.cadastro;
 
@@ -24,22 +22,11 @@ public class cadastroctrl {
         this.repocad = repocad;
     }
 
-    //funções de visualizar dados
-
-    //retornar lista de cadastros
-
-    @GetMapping("/view")
-    public List<cadastro> listarCadastros()
-    {
-        return repocad.findAll();
-    }
-
-    //Funções de Cadastrar usuario
+    
     @PostMapping("/cad")
-    public Boolean cadastrar_usuario(@RequestBody cadastro cad)
+    public Boolean cadastrar_usuario(@RequestBody cadastro usuario)
     {
-        cadastro resposta = repocad.save(cad);
-        if(resposta != null)
+        if(repocad.save(usuario) != null)
         {
             return true;
         }
@@ -47,5 +34,12 @@ public class cadastroctrl {
         {
             return false;
         }
+    }
+
+    //função de carregamento do usuario
+    @PostMapping("/load")
+    public cadastro carregar_cadastro(@RequestBody long id)
+    {
+        return repocad.carregarUsuario(id);
     }
 }

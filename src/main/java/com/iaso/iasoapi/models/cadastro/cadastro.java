@@ -68,7 +68,7 @@ public class cadastro implements Serializable
 
     @OneToOne
     @JoinColumn(name = "codigo_login", referencedColumnName = "codigo")
-    private login login_codigo;
+    private login codigo_login;
 
     @OneToMany
     private List<prontuario> prontuarios;
@@ -186,11 +186,11 @@ public class cadastro implements Serializable
     }
 
     public login getLogin_codigo() {
-        return login_codigo;
+        return codigo_login;
     }
 
-    public void setLogin_codigo(login login_codigo) {
-        this.login_codigo = login_codigo;
+    public void setLogin_codigo(login codigo_login) {
+        this.codigo_login = codigo_login;
     }
 
     public List<prontuario> getProntuarios() {

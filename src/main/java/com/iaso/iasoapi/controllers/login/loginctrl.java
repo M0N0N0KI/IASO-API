@@ -48,15 +48,16 @@ public class loginctrl {
 
     //Realizar login
     @PostMapping("/log")
-    public Boolean login_usuario(@RequestBody login log)
+    public Long login_usuario(@RequestBody login log)
     {
-        if(repologin.efetuarlogin(log.getNome(),log.getSenha()) != null)
+        login usuario = repologin.efetuarlogin(log.getNome(),log.getSenha());
+        if(usuario !=  null)
         {
-            return true;
+            return usuario.getCodigo();
         }
         else
         {
-            return false;
+            return null;
         }
     }
 }
