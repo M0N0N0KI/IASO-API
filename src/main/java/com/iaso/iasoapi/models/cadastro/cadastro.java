@@ -1,5 +1,6 @@
 package com.iaso.iasoapi.models.cadastro;
 
+import com.iaso.iasoapi.models.login.login;
 import com.iaso.iasoapi.models.prontuario.prontuario;
 
 import java.io.Serializable;
@@ -11,7 +12,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -63,6 +66,140 @@ public class cadastro implements Serializable
     @Column(nullable = false)
     private Boolean paciente_funcionario = false;
 
+    @OneToOne
+    @JoinColumn(name = "codigo_login", referencedColumnName = "codigo")
+    private login login_codigo;
+
     @OneToMany
     private List<prontuario> prontuarios;
+
+    public long getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(long codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getNome_completo() {
+        return nome_completo;
+    }
+
+    public void setNome_completo(String nome_completo) {
+        this.nome_completo = nome_completo;
+    }
+
+    public String getNome_mae() {
+        return nome_mae;
+    }
+
+    public void setNome_mae(String nome_mae) {
+        this.nome_mae = nome_mae;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getCns() {
+        return cns;
+    }
+
+    public void setCns(String cns) {
+        this.cns = cns;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public String getRaca_cor() {
+        return raca_cor;
+    }
+
+    public void setRaca_cor(String raca_cor) {
+        this.raca_cor = raca_cor;
+    }
+
+    public BigDecimal getCep() {
+        return cep;
+    }
+
+    public void setCep(BigDecimal cep) {
+        this.cep = cep;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getRua() {
+        return rua;
+    }
+
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
+
+    public String getNumero_casa() {
+        return numero_casa;
+    }
+
+    public void setNumero_casa(String numero_casa) {
+        this.numero_casa = numero_casa;
+    }
+
+    public String getNacionalidade() {
+        return nacionalidade;
+    }
+
+    public void setNacionalidade(String nacionalidade) {
+        this.nacionalidade = nacionalidade;
+    }
+
+    public String getNaturalidade() {
+        return naturalidade;
+    }
+
+    public void setNaturalidade(String naturalidade) {
+        this.naturalidade = naturalidade;
+    }
+
+    public Boolean getPaciente_funcionario() {
+        return paciente_funcionario;
+    }
+
+    public void setPaciente_funcionario(Boolean paciente_funcionario) {
+        this.paciente_funcionario = paciente_funcionario;
+    }
+
+    public login getLogin_codigo() {
+        return login_codigo;
+    }
+
+    public void setLogin_codigo(login login_codigo) {
+        this.login_codigo = login_codigo;
+    }
+
+    public List<prontuario> getProntuarios() {
+        return prontuarios;
+    }
+
+    public void setProntuarios(List<prontuario> prontuarios) {
+        this.prontuarios = prontuarios;
+    }
+
+    
 }

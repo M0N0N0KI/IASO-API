@@ -52,5 +52,4 @@ public class login implements Serializable{
         return this.senha;
     }
 
-
 }
