@@ -68,10 +68,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<plugin>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.1</version>
-        </plugin>
 	</build>
 
 </project>
