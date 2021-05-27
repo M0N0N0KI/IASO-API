@@ -3,7 +3,6 @@ package com.iaso.iasoapi.controllers.login;
 import java.util.List;
 
 import com.iaso.iasoapi.models.login.login;
-import com.iaso.iasoapi.models.login.loginRepoManual;
 import com.iaso.iasoapi.models.login.loginRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,12 +19,10 @@ public class loginctrl {
     //associando ao repositorio de login
     @Autowired
     loginRepository repologin;
-    loginRepoManual repoMlogin;
 
-    public loginctrl(loginRepository repol, loginRepoManual repoml)
+    public loginctrl(loginRepository repol)
     {
         this.repologin = repol;
-        this.repoMlogin = repoml;
     }
 
     //funções de visualisar dados
