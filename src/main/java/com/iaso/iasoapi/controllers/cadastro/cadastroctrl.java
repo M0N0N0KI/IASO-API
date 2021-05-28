@@ -1,9 +1,17 @@
 package com.iaso.iasoapi.controllers.cadastro;
 
 import com.iaso.iasoapi.models.cadastro.cadastroRepository;
+import com.iaso.iasoapi.models.login.login;
+
+import java.util.List;
+import java.util.Optional;
+
+import javax.websocket.server.PathParam;
+
 import com.iaso.iasoapi.models.cadastro.cadastro;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +30,12 @@ public class cadastroctrl {
         this.repocad = repocad;
     }
 
+    @GetMapping("/view")
+    public List<cadastro> listarCadastros()
+    {
+        return repocad.findAll();
+    }
+
     
     @PostMapping("/cad")
     public Boolean cadastrar_usuario(@RequestBody cadastro usuario)
@@ -37,8 +51,8 @@ public class cadastroctrl {
     }
 
     //função de carregamento do usuario
-    @PostMapping("/load/{id}")
-    public cadastro carregar_cadastro(@RequestParam(value = "id") long id)
+    @PostMapping("/load")
+    public cadastro carregar_cadastro(@RequestParam("id") long id)
     {
         return repocad.carregarUsuario(id);
     }
