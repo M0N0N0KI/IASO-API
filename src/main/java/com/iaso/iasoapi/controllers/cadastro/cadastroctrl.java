@@ -1,12 +1,8 @@
 package com.iaso.iasoapi.controllers.cadastro;
 
 import com.iaso.iasoapi.models.cadastro.cadastroRepository;
-import com.iaso.iasoapi.models.login.login;
 
 import java.util.List;
-import java.util.Optional;
-
-import javax.websocket.server.PathParam;
 
 import com.iaso.iasoapi.models.cadastro.cadastro;
 
