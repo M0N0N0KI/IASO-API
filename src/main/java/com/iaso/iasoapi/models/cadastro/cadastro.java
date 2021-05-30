@@ -5,6 +5,7 @@ import com.iaso.iasoapi.models.prontuario.prontuario;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -62,6 +63,15 @@ public class cadastro implements Serializable
     
     @Column(length = 20, nullable = false)
     private String naturalidade;
+
+    @Column(length = 10, nullable = false)
+    private String telefone;
+
+    @Column(length = 10, nullable = false)
+    private String cartao_sus;
+
+    @Column(nullable = false)
+    private Date nascimento;
 
     @Column(nullable = false)
     private Boolean paciente_funcionario = false;
@@ -175,6 +185,30 @@ public class cadastro implements Serializable
 
     public void setNaturalidade(String naturalidade) {
         this.naturalidade = naturalidade;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getCartao_sus() {
+        return cartao_sus;
+    }
+
+    public void setCartao_sus(String cartao_sus) {
+        this.cartao_sus = cartao_sus;
+    }
+
+    public Date getNascimento() {
+        return nascimento;
+    }
+
+    public void setNascimento(Date nascimento) {
+        this.nascimento = nascimento;
     }
 
     public Boolean getPaciente_funcionario() {
