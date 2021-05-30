@@ -50,6 +50,15 @@ public class cadastroctrl {
     @PostMapping("/load")
     public cadastro carregar_cadastro(@RequestParam("id") long id)
     {
-        return repocad.carregarUsuario(id);
+        cadastro usuario = repocad.carregarUsuario(id);
+
+        if(usuario != null)
+        {
+            return usuario;
+        }
+        else
+        {
+            return null;
+        }
     }
 }
